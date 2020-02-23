@@ -1,0 +1,64 @@
+{
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [".ccls-root", "compile_commands.json"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": ".ccls-cache"
+                }
+            }
+        },
+        "fortran" : {
+            "command": "fortls",
+            "filetypes": ["fortran"],
+            "rootPatterns": [".fortls", ".git/"]
+        },
+    "julia": {
+            "command": "julia",
+            "args" : ["--startup-file=no", "--history-file=no", "-e",
+                              "using LanguageServer;\n       using Pkg;\n       import StaticLint;\n       import SymbolServer;\n       env_path = dirname(Pkg.Types.Context().env.project_file);\n       debug = false;\n       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, \"\", Dict());\n       server.runlinter = true;\n       run(server);" ],
+            "filetypes": ["julia"]
+        }
+    },
+    "explorer.position": "left",
+    "explorer.width": 20,
+    "explorer.sources": [
+        {
+            "name": "buffer",
+            "expand": true
+        },
+        {
+            "name": "file",
+            "expand": true
+        }
+    ],
+    "explorer.keyMappings": {
+        "k": "nodePrev",
+        "j": "nodeNext",
+        "?": "help",
+        "y": "copyFilename",
+        "Y": "copyFilePath",
+        "c": "copyFile",
+        "x": "cutFile",
+        "p": "pasteFile",
+        "d": "delete",
+        "a": "addFile",
+        "A": "addDirectory",
+        "r": "rename",
+        "e": "open",
+        "E": "openInVsplit",
+        "f": "search",
+        "q": "quit"
+    },
+    "suggest.noselect": true,
+    "snippets.extends": {
+        "cpp": ["c"],
+        "typescript": ["javascript"],
+        "fortran": ["FortranFreeForm"],
+        "tex": ["latex"]
+    },
+    "snippets.textmateSnippetsRoots": ["/mnt/c/Users/MI/AppData/Roaming/Code/User/snippets"],
+    "snippets.ultisnips.enable": false
+}
