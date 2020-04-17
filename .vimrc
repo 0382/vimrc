@@ -41,15 +41,15 @@ set nofoldenable
 set synmaxcol=200
 
 filetype off
-call plug#begin("/home/cl/.vim/myplug")
+call plug#begin("~/.vim/myplug")
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'JuliaEditorSupport/julia-vim'
+"Plug 'JuliaEditorSupport/julia-vim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
-Plug '0382/vim-translate'
+"Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
+"Plug '0382/vim-translate'
 call plug#end()
 filetype plugin indent on
 syntax enable

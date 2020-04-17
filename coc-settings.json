@@ -1,21 +1,15 @@
 {
     "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-            "rootPatterns": [".ccls-root", "compile_commands.json"],
-            "initializationOptions": {
-                "cache": {
-                    "directory": ".ccls-cache"
-                }
-            }
+        "clangd": {
+            "command": "clangd-9",
+            "filetypes": ["c", "cpp", "objc", "objcpp"]
         },
         "fortran" : {
             "command": "fortls",
             "filetypes": ["fortran"],
             "rootPatterns": [".fortls", ".git/"]
         },
-    "julia": {
+        "julia": {
             "command": "julia",
             "args" : ["--startup-file=no", "--history-file=no", "-e",
                               "using LanguageServer;\n       using Pkg;\n       import StaticLint;\n       import SymbolServer;\n       env_path = dirname(Pkg.Types.Context().env.project_file);\n       debug = false;\n       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, \"\", Dict());\n       server.runlinter = true;\n       run(server);" ],
@@ -52,13 +46,5 @@
         "f": "search",
         "q": "quit"
     },
-    "suggest.noselect": true,
-    "snippets.extends": {
-        "cpp": ["c"],
-        "typescript": ["javascript"],
-        "fortran": ["FortranFreeForm"],
-        "tex": ["latex"]
-    },
-    "snippets.textmateSnippetsRoots": ["/mnt/c/Users/MI/AppData/Roaming/Code/User/snippets"],
-    "snippets.ultisnips.enable": false
+    "suggest.noselect": true
 }
