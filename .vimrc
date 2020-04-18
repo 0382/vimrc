@@ -2,7 +2,7 @@ set nocompatible
 set number
 set backup
 set backupdir=~/.vim/backup
-set backupext=-vimbackup
+"set backupext=-vimbackup
 set noswapfile
 set undofile
 set undodir=~/.vim/undodir
