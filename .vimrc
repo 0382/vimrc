@@ -1,8 +1,6 @@
 set nocompatible
 set number
-set backup
-set backupdir=~/.vim/backup
-"set backupext=-vimbackup
+set nobackup
 set noswapfile
 set undofile
 set undodir=~/.vim/undodir
@@ -40,16 +38,24 @@ set foldmethod=syntax
 set nofoldenable
 set synmaxcol=200
 
+if has("gui")
+    set guifont=Ubuntu\ Mono:h12
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=b
+    set lines=40 columns=120
+endif
+
 filetype off
 call plug#begin("~/.vim/myplug")
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
-"Plug 'JuliaEditorSupport/julia-vim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
-"Plug '0382/vim-translate'
 call plug#end()
 filetype plugin indent on
 syntax enable
