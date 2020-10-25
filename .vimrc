@@ -39,14 +39,14 @@ set nofoldenable
 set synmaxcol=200
 
 if has("gui")
-    set guifont=Ubuntu\ Mono:h12
+    set guifont=Cascadia\ Mono:h12
     set guioptions-=m
     set guioptions-=T
     set guioptions-=r
     set guioptions-=l
     set guioptions-=L
     set guioptions-=b
-    set lines=40 columns=120
+    set lines=30 columns=120
 endif
 
 filetype off
