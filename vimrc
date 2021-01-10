@@ -177,4 +177,11 @@ let g:asyncrun_bell = 1
 let g:asyncrun_open = 6
 let g:asyncrun_rootmarks = ['.root', '.git', '.project', 'Makefile']
 let g:asynctasks_term_pos = "quickfix"
-let g:asy
+let g:asynctasks_term_rows = 6
+"nnoremap <Leader>aq :call asyncrun#quickfix_toggle(6)<cr>
+
+nnoremap <Leader>fb :AsyncTask file-build<cr>
+nnoremap <Leader>fr :AsyncTask file-run<cr>
+nnoremap <Leader>pb :AsyncTask project-build<cr>
+nnoremap <Leader>pr :AsyncTask project-run<cr>
+
