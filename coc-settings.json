@@ -22,7 +22,8 @@
             "expand": true
         }
     ],
-    "explorer.keyMappings": {
+    "explorer.keyMappings.global": {
+        "i": false, // cancle default mapkey
         "k": "nodePrev",
         "j": "nodeNext",
         "?": "help",

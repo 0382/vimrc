@@ -91,7 +91,7 @@ set noundofile                   " 禁用undo
 
 filetype off
 call plug#begin("~/.vim/myplug")
-" Plug 'mhinz/vim-startify'
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
