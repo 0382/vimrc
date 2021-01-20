@@ -116,7 +116,7 @@ let g:light = {
 " map setting
 nnoremap j gj
 nnoremap k gk
-vnoremap j gk
+vnoremap j gj
 vnoremap k gk
 
 noremap <C-h> <left>
