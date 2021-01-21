@@ -8,13 +8,14 @@
 
 ### 安装
 
-然后直接clone本仓库
+先删除本地的`~/.vim`文件。然后直接clone本仓库
 ```bash
 git clone http://github.com/0382/settings.git ~/.vim
 ```
-在linux下`$~/.vimrc`或windows下的`$VIM/_vimrc`中只写一句
+
+在linux下`$~/.vimrc`或windows下的`$VIM/_vimrc`中只用写一句
 ```vim
-source ~/.vim/vimrc
+source ~/.vim/init.vim
 ```
 
 本仓库内置了[vim-plug](https://github.com/junegunn/vim-plug)插件管理器，直接使用`:PlugInstall`命令安装插件，初次打开可能会有报错，装完插件应该就没问题了。
@@ -46,6 +47,7 @@ source ~/.vim/vimrc
 - `<leader>fr`，运行单个文件结果，支持`c,c++,fortran,python,latex,javascript,julia,lisp`，其中`latex`对应的是使用`SumatraPDF`打开编译好的pdf文件，需要安装`SumatraPDF`。
 - `<leader>pb`，编译整个项目，姑且定义了这个快捷键实际上是`make`命令，需要你自己写`Makefile`。
 - `<leader>pr`，运行整个小目，实际上是`make run`命令。
+- `<leader>aq`，快速打开或关闭上述命令打开的qucikfix窗口。
 
 #### 其他
 - `<leader>w[hjkl]`切换窗口。
@@ -70,7 +72,6 @@ source ~/.vim/vimrc
 #### python
 
 没有特别设置，建议使用`coc.nvim`插件`coc-python`，用`:CocInstall coc-python`安装。目前我不太写`python`，待调教。
-
 
 ## 参考
 - [vim-init](https://github.com/skywind3000/vim-init)
