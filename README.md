@@ -2,19 +2,32 @@
 
 ## 安装
 
+### 依赖
+
+由于使用了[coc.nvim](https://github.com/neoclide/coc.nvim)插件，需要`nodejs`支持，需要首先安装[nodejs](https://nodejs.org/)。且`coc.nvim`仅支持vim8以上的版本，故本配置也仅适用于vim8以上版本。
+
+### 安装
+
+然后直接clone本仓库
 ```bash
 git clone http://github.com/0382/settings.git ~/.vim
 ```
+在linux下`$~/.vimrc`或windows下的`$VIM/_vimrc`中只写一句
+```vim
+source ~/.vim/vimrc
+```
 
-使用`coc.nvim`插件，需要`nodejs`支持，需要首先安装`nodejs`。内置了`vim-plug`插件管理器，直接使用`:PlugInstall`命令安装插件，初次安装可能会有报错，装完插件应该就没问题了。
+本仓库内置了[vim-plug](https://github.com/junegunn/vim-plug)插件管理器，直接使用`:PlugInstall`命令安装插件，初次打开可能会有报错，装完插件应该就没问题了。
 
 ## 使用
 
 ### 基本功能
 
+没有设置`<leader>`键，即使用默认的`\`键。
+
 #### 文件侧边栏
 
-使用`coc-explorer`插件，需要使用命令`:CocInstall coc-explorer`来安装。
+使用[coc-explorer](https://github.com/weirongxu/coc-explorer)插件，需要使用命令`:CocInstall coc-explorer`来安装。
 
 快捷键
 - `<leader>ce`打开`coc-explorer`
@@ -27,13 +40,15 @@ git clone http://github.com/0382/settings.git ~/.vim
 
 #### 快捷编译运行
 
-- 编译单个文件，`<leader>fb`，支持`c,c++,fortran,latex`
-- 运行单个文件结果，`<leader>fr`，支持`c,c++,fortran,python,latex,javascript,julia,lisp`，其中`latex`对应的使用`SumatraPDF`打开编译好的pdf文件，需要安装`SumatraPDF`
-- 编译整个项目，姑且定义了快捷键`<leader>pb`，实际上是`make`命令，需要你自己写`Makefile`
-- 运行整个小目，同上，快捷键`<leader>pr`，实际上是`make run`命令
+使用[asyncrun.vim](https://github.com/skywind3000/asyncrun.vim)和[asynctasks.vim](https://github.com/skywind3000/asynctasks.vim)来配置这个功能。
+
+- `<leader>fb`，编译单个文件，支持`c,c++,fortran,latex`。
+- `<leader>fr`，运行单个文件结果，支持`c,c++,fortran,python,latex,javascript,julia,lisp`，其中`latex`对应的是使用`SumatraPDF`打开编译好的pdf文件，需要安装`SumatraPDF`。
+- `<leader>pb`，编译整个项目，姑且定义了这个快捷键实际上是`make`命令，需要你自己写`Makefile`。
+- `<leader>pr`，运行整个小目，实际上是`make run`命令。
 
 #### 其他
-- `<leader>w`+`hjkl`切换窗口。
+- `<leader>w[hjkl]`切换窗口。
 - `<alt>=`打开或关闭`terminal`，使用的是`vim-terminal-help`的默认设置。
 - `<leader>l`去除搜索后的高亮。
 - `<C-[hjkl]>`总是（包括插入模式下）能够作为方向键移动（大概）。
@@ -42,17 +57,21 @@ git clone http://github.com/0382/settings.git ~/.vim
 
 #### c/c++开发
 
-使用`clangd`作为language server来提供更加强大的代码提示功能，需要安装`clangd`。
+使用[clangd](https://clangd.llvm.org/)作为[language server](https://microsoft.github.io/language-server-protocol/)来提供更加强大的代码提示功能，所以需要安装`clangd`。
 
 #### Fortran 开发
 
-使用`fortran-language-server`作为language server，这是python写的包，所以在`windows`下需要安装`python`，然后用`pip install fortran-language-server`来安装这个包，一些配置可能需要去看看该库的README。
+使用[fortran-language-server](https://github.com/hansec/fortran-language-server)作为language server，这是python写的包，所以在Windows下需要安装`python`，然后用`pip install fortran-language-server`来安装这个包，一些配置可能需要去看看该库的README。
 
 #### julia
 
-使用了`julia-vim`插件作为一些基本设置，其中的Unicode功能待配置。使用julia包`LanguageServer, SymbolServer, StaticLint`作为language server，所以需要安装这三个包，不需要额外设置。
+使用了[julia-vim](https://github.com/JuliaEditorSupport/julia-vim)插件作为基础支持，其中的Unicode功能待配置。使用julia包`LanguageServer, SymbolServer, StaticLint`作为language server，所以需要安装这三个包，不需要额外设置。
 
 #### python
 
-没有特别设置，建议使用`coc`插件`coc-python`，用`:CocInstall coc-python`安装。目前我不太写`python`，待调教。
+没有特别设置，建议使用`coc.nvim`插件`coc-python`，用`:CocInstall coc-python`安装。目前我不太写`python`，待调教。
 
+
+## 参考
+- [vim-init](https://github.com/skywind3000/vim-init)
+- [coc.nvim](https://github.com/neoclide/coc.nvim/wiki)
