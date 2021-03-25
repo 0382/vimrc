@@ -11,7 +11,7 @@ set linebreak
 set ruler                        " 显示光标位置
 set number                       " 显示行号
 set wildmenu                     " 允许下方显示目录
-set autoread
+set autoread                     " 自动重加载
 set mouse=a
 set updatetime=300
 set synmaxcol=200
@@ -82,6 +82,7 @@ set matchtime=2                  " 显示匹配括号的时间
 set lazyredraw                   " 延迟绘制
 set errorformat+=[%f:%l]\ ->\ %m,[%f:%l]:%m
 set fileformat=unix
+set fileformats=unix,dos
 
 " 备份设置
 set backup                       " 备份

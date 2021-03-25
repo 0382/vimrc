@@ -64,6 +64,7 @@ nnoremap <Leader>aq :call asyncrun#quickfix_toggle(6)<cr>
 
 nnoremap <Leader>fb :AsyncTask file-build<cr>
 nnoremap <Leader>fr :AsyncTask file-run<cr>
+nnoremap <Leader>ff :AsyncTask file-format<cr>
 nnoremap <Leader>pb :AsyncTask project-build<cr>
 nnoremap <Leader>pr :AsyncTask project-run<cr>
 

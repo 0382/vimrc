@@ -44,7 +44,8 @@ source ~/.vim/init.vim
 使用[asyncrun.vim](https://github.com/skywind3000/asyncrun.vim)和[asynctasks.vim](https://github.com/skywind3000/asynctasks.vim)来配置这个功能。
 
 - `<leader>fb`，编译单个文件，支持`c,c++,fortran,latex`。
-- `<leader>fr`，运行单个文件结果，支持`c,c++,fortran,python,latex,javascript,julia,lisp`，其中`latex`对应的是使用`SumatraPDF`打开编译好的pdf文件，需要安装`SumatraPDF`。
+- `<leader>fr`，运行单个文件结果，支持`c,c++,fortran,rust,python,javascript,julia,lisp`。
+- `<Leader>ff`, 格式化整个文件，姑目前仅支持`c,c++`。
 - `<leader>pb`，编译整个项目，姑且定义了这个快捷键实际上是`make`命令，需要你自己写`Makefile`。
 - `<leader>pr`，运行整个小目，实际上是`make run`命令。
 - `<leader>aq`，快速打开或关闭上述命令打开的qucikfix窗口。
@@ -68,6 +69,9 @@ source ~/.vim/init.vim
 #### julia
 
 使用了[julia-vim](https://github.com/JuliaEditorSupport/julia-vim)插件作为基础支持，其中的Unicode功能待配置。使用julia包`LanguageServer, SymbolServer, StaticLint`作为language server，所以需要安装这三个包，不需要额外设置。
+
+#### rust
+rust的cargo还是很舒服的，`<leader>pb, <leader>pr`快捷键定义为`cargo build, cargo run`。自行安装[coc-rust-analyzer](https://github.com/fannheyward/coc-rust-analyzer)作为LSP。
 
 #### python
 
