@@ -1,5 +1,7 @@
 " 插件配置文件，使用vim-plug作为插件管理器
 
+let g:plug_url_format = 'git@github.com:%s.git'
+
 filetype off
 call plug#begin("~/.vim/myplug")
 Plug 'JuliaEditorSupport/julia-vim'
@@ -20,28 +22,26 @@ syntax on
 set background=dark
 set t_Co=256
 colorscheme onedark
-let g:light = {
+let g:lightline = {
     \ 'colorscheme': 'onedark'
     \}
 
 " coc.nvim 设置
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1] =~# '\s'
-endfunction
-
 inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump', ''])\<CR>" :
+    \ coc#pum#visible() ? coc#_select_confirm() :
+    \ coc#expandableOrJumpable() ?
+    \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
     \ <SID>check_back_space() ? "\<TAB>" :
     \ coc#refresh()
 
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 let g:coc_snippet_next = '<tab>'
 
-" use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+map <silent> g[ <Plug>(coc-diagnostic-prev)
 nmap <silent> g] <Plug>(coc-diagnostic-next)
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -57,9 +57,11 @@ nnoremap <Leader>ce :CocCommand explorer<cr>
 " asyncrun 设置
 let g:asyncrun_bell = 1
 let g:asyncrun_open = 6
-let g:asyncrun_rootmarks = ['.root', '.git', 'Cargo.toml', 'Makefile']
-let g:asynctasks_term_pos = "quickfix"
+let g:asyncrun_save = 2
+let g:asyncrun_rootmarks = ['.root', '.git', 'Cargo.toml', 'Makefile', '.vscode']
+let g:asynctasks_term_pos = "TAB"
 let g:asynctasks_term_rows = 6
+let g:asynctasks_term_cols = 40
 nnoremap <Leader>aq :call asyncrun#quickfix_toggle(6)<cr>
 
 nnoremap <Leader>fb :AsyncTask file-build<cr>

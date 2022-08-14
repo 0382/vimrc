@@ -26,11 +26,11 @@ vnoremap <Leader>y "+y
 nnoremap <Leader>p "+p
 
 " 切换窗口
-nnoremap <Leader>sw <c-w><c-w>
-nnoremap <Leader>wl <c-w>l
-nnoremap <Leader>wh <c-w>h
-nnoremap <Leader>wj <c-w>j
-nnoremap <Leader>wk <c-w>k
+nnoremap <A-w> <c-w><c-w>
+nnoremap <A-l> <c-w>l
+nnoremap <A-h> <c-w>h
+nnoremap <A-j> <c-w>j
+nnoremap <A-k> <c-w>k
 
 " 消除搜索高亮
 nnoremap <Leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
