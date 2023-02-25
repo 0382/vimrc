@@ -12,13 +12,19 @@
 ```bash
 git clone http://github.com/0382/settings.git ~/.vim
 ```
+还需要拉取一下[vim-plug](https://github.com/junegunn/vim-plug)插件管理器
+```bash
+cd ~/.vim
+git submodule init
+git submodule update
+```
 
 在linux下`$~/.vimrc`或windows下的`$VIM/_vimrc`中只用写一句
 ```vim
 source ~/.vim/init.vim
 ```
 
-本仓库内置了[vim-plug](https://github.com/junegunn/vim-plug)插件管理器，直接使用`:PlugInstall`命令安装插件，初次打开可能会有报错，装完插件应该就没问题了。
+因为使用了[vim-plug](https://github.com/junegunn/vim-plug)插件管理器，直接使用`:PlugInstall`命令安装插件即可，初次打开可能会有报错，装完插件应该就没问题了。
 
 ## 使用
 
@@ -51,7 +57,7 @@ source ~/.vim/init.vim
 - `<leader>aq`，快速打开或关闭上述命令打开的qucikfix窗口。
 
 #### 其他
-- `<leader>w[hjkl]`切换窗口。
+- `<alt>w[hjkl]`切换窗口。
 - `<alt>=`打开或关闭`terminal`，使用的是`vim-terminal-help`的默认设置。
 - `<leader>l`去除搜索后的高亮。
 - `<C-[hjkl]>`总是（包括插入模式下）能够作为方向键移动（大概）。
@@ -64,7 +70,7 @@ source ~/.vim/init.vim
 
 #### Fortran 开发
 
-使用[fortran-language-server](https://github.com/hansec/fortran-language-server)作为language server，这是python写的包，所以在Windows下需要安装`python`，然后用`pip install fortran-language-server`来安装这个包，一些配置可能需要去看看该库的README。
+使用[fortls](https://github.com/fortran-lang/fortls)作为language server，这是python写的包，所以在Windows下需要安装`python`，然后用`pip install fortls`来安装这个包，一些配置可能需要去看看该库的README。
 
 #### julia
 

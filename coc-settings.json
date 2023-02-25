@@ -14,6 +14,12 @@
         },
         "fortran" : {
             "command": "fortls",
+            "args": [
+                "--lowercase_intrinsics",
+                "--hover_signature",
+                "--hover_language=fortran",
+                "--use_signature_help"
+            ],
             "filetypes": ["fortran"],
             "rootPatterns": [".fortls", ".git/"]
         }

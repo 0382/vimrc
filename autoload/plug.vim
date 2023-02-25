@@ -1,1 +1,1 @@
-source ../vim-plug/plug.vim
+source ~/.vim/vim-plug/plug.vim
